@@ -1,0 +1,78 @@
+编译：
+1.编译搭建拓扑环境程序 make
+2.编译路由协议程序 （1）cd singlePot （2）make
+3.编译删除所有虚拟网络设备程序（1）cd del （2）g++ -std=c++11 -o del del.cpp
+4.编译搭建攻击仿真环境程序 （1）cd attack 
+                          （2）g++ -std=c++11 -o attack  attack.cpp
+5.编译攻击节点发包程序attackSocket.cpp文件命令：（1）cd attack 
+（2）g++ -std=c++11 -o attackSocket  attackSocket.cpp -lpthread -lssl -lcrypto
+
+运行
+1.仿真攻击场景时需要先调用ovs_restart.sh文件启动OVS sudo bash ovs_restart.sh 
+2.搭建拓扑环境 (1)进入SatRouteProtect 文件夹 cd SatRouteProtect/
+               (2)以root权限执行程序         sudo ./main 
+	       (3)在程序中输入start开始初始化拓扑 200s后更新完所有卫星路由后输入stop暂停拓扑变化
+3.启动路由协议（1）新打开一个终端并进入路由协议文件夹 cd singlePot
+	     （2）(需要停止拓扑结构，在程序中输入start开始初始化拓扑 200s后更新完所有卫星路由后输入stop暂停拓扑变化)启动每个卫星节点发包程序 sudo bash test.sh 0 200 / sudo bash test.sh 1 200/sudo bash test.sh 2 200（在singlepot终端）
+                （第一个参数为发包程序是否为经过加密认证后的路由协议，0为未加密版本，1为加密后版本,2为备份链路版本）
+		（第二个参数为当前卫星拓扑所运行到的时间 如200为main程序执行200s后时间）
+	     （3）新打开一个终端并清空路由指令 cd routeFile/
+			      sudo ./route 1
+                   (参数为1清空所有路由指令，参数为2更新所有路由指令)
+4.测试路由连通性 （1）查看节点仿真情况 sudo ip netns show (按顺序建立卫星节点)
+		 (2) 查看链路通断仿真情况 以卫星1为例 sudo ip netns exec sat1 ip link show（以卫星1为例，查看端口链接情况，注意5个端口的情况）
+		 (3) 查看路由仿真情况 以卫星1为例 sudo ip netns exec sat1 ip route show（：190.0.127.0/24 via 190.0.1.2 dev sat1p0到达第一个ip地址需要通过第二个IP地址，该地址的位置如后所示）
+		 (4) 查看连通性情况 以卫星1到卫星2为例 sudo ip netns exec sat1 ping 2.0.0.2
+		 (5) 查看链路变化后连通性情况 以卫星1到卫星2为例（开启第二个程序检测第一个程序运行时的连通状态）
+                        终端1中卫星1到卫星2发ping测试包 sudo ip netns exec sat1 ping 2.0.0.2
+			终端2中断开卫星1到卫星2链路 sudo ip netns exec sat1 ip link set sat1p0 down
+			终端3中更新路由 在routefile终端 sudo ./route 2（终端1才会连通）
+建议：如果要测试攻击场景，需要up之前的链路
+5.测试攻击场景连通性（1）新启动一个终端并进入攻击仿真文件夹 cd attack
+		    (2) 启动攻击仿真程序 sudo ./attack 1 
+		    (3) 选择攻击仿真卫星编号  以卫星2为例 2
+		    (4) 选择攻击模式编号 以发送伪HELLO包为例 1
+各攻击场景仿真命令 ：（1）发送伪HELLO包 
+			终端1中卫星1到卫星4发ping测试包 sudo ip netns exec sat1 ping 4.0.0.2
+			终端2中选择攻击仿真卫星编号 4, 攻击模式编号 1
+			终端3中断开卫星3到卫星4链路  sudo ip netns exec sat3 ip link set sat3p1 down（进入卫星3断开3和4的链路）
+			终端3中更新路由 sudo ./route 2
+			查看终端1中链路连通性情况
+		     （2）发送伪LSU包 
+			终端1中卫星1到卫星4发ping测试包 sudo ip netns exec sat1 ping 4.0.0.2
+			终端2中选择攻击仿真卫星编号 2, 攻击模式编号 2
+			终端3中更新路由 sudo ./route 2
+			查看终端1中链路连通性情况
+                     （3）丢弃HELLO包 
+			(启动备份路由时先杀死原来的卫星节点发包程序sudo killall -9 satSocket，
+			重新启动卫星节点发包程序 sudo bash test.sh 2 200)
+			终端1中卫星1到卫星3发ping测试包 sudo ip netns exec sat1 ping 3.0.0.2
+			终端3中断开卫星1到卫星2链路  sudo ip netns exec sat1 ip link set sat1p0 down
+			终端3中更新路由 sudo ./route 2
+			查看终端1中链路连通性情况
+		     （4）篡改LSU包 
+			终端1中卫星1到卫星4发ping测试包 sudo ip netns exec sat1 ping 4.0.0.2
+			终端2中选择攻击仿真卫星编号 2, 攻击模式编号 4
+			终端3中20s时断开卫星3到卫星4链路  sudo ip netns exec sat3 ip link set sat3p1 down
+			终端3中更新路由 sudo ./route 2
+			终端3中70s时恢复卫星3到卫星4链路  sudo ip netns exec sat3 ip link set sat3p1 up
+			终端3中更新路由 sudo ./route 2
+			收到篡改的LSU包后终端3中更新路由 sudo ./route 2
+			查看终端1中链路连通性情况
+		     （5）延迟LSU包 
+			终端1中卫星1到卫星4发ping测试包 sudo ip netns exec sat1 ping 4.0.0.2
+			终端2中选择攻击仿真卫星编号 2, 攻击模式编号 4
+			终端3中20s时断开卫星3到卫星4链路  sudo ip netns exec sat3 ip link set sat3p1 down
+			终端3中更新路由 sudo ./route 2
+			终端3中70s时恢复卫星3到卫星4链路  sudo ip netns exec sat3 ip link set sat3p1 up
+			终端3中更新路由 sudo ./route 2
+			收到篡改的LSU包后终端3中更新路由 sudo ./route 2
+			查看终端1中链路连通性情况
+6.退出程序  （1）杀死每个卫星节点发包程序 sudo killall -9 satSocket
+            (2)清空冗余路由指令 cd routeFile && sudo ./route 1
+	    (3)退出拓扑更新程序 crtl +C 退出并执行sudo del/./del 清空虚拟网络设备
+
+注意：每次在运行bash后需要清空（route1），每次运行完up down后需要更新路由（route2）
+top命令查看进程
+
+

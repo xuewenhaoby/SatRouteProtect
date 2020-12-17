@@ -1,0 +1,94 @@
+PING 190.0.8.2 (190.0.8.2) 56(84) bytes of data.
+64 bytes from 190.0.8.2: icmp_seq=1 ttl=62 time=0.478 ms
+64 bytes from 190.0.8.2: icmp_seq=2 ttl=62 time=0.254 ms
+64 bytes from 190.0.8.2: icmp_seq=3 ttl=62 time=0.121 ms
+64 bytes from 190.0.8.2: icmp_seq=4 ttl=62 time=1.61 ms
+64 bytes from 190.0.8.2: icmp_seq=5 ttl=62 time=0.134 ms
+64 bytes from 190.0.8.2: icmp_seq=6 ttl=62 time=0.173 ms
+64 bytes from 190.0.8.2: icmp_seq=7 ttl=62 time=0.127 ms
+64 bytes from 190.0.8.2: icmp_seq=8 ttl=62 time=0.151 ms
+64 bytes from 190.0.8.2: icmp_seq=9 ttl=62 time=0.152 ms
+64 bytes from 190.0.8.2: icmp_seq=10 ttl=62 time=0.119 ms
+64 bytes from 190.0.8.2: icmp_seq=11 ttl=62 time=0.137 ms
+64 bytes from 190.0.8.2: icmp_seq=12 ttl=62 time=0.140 ms
+64 bytes from 190.0.8.2: icmp_seq=13 ttl=62 time=0.121 ms
+64 bytes from 190.0.8.2: icmp_seq=14 ttl=62 time=0.140 ms
+64 bytes from 190.0.8.2: icmp_seq=15 ttl=62 time=0.169 ms
+64 bytes from 190.0.8.2: icmp_seq=16 ttl=62 time=0.131 ms
+64 bytes from 190.0.8.2: icmp_seq=17 ttl=62 time=0.174 ms
+64 bytes from 190.0.8.2: icmp_seq=18 ttl=62 time=0.659 ms
+64 bytes from 190.0.8.2: icmp_seq=19 ttl=62 time=0.126 ms
+64 bytes from 190.0.8.2: icmp_seq=20 ttl=62 time=0.128 ms
+64 bytes from 190.0.8.2: icmp_seq=21 ttl=62 time=0.170 ms
+64 bytes from 190.0.8.2: icmp_seq=22 ttl=62 time=0.128 ms
+64 bytes from 190.0.8.2: icmp_seq=23 ttl=62 time=0.117 ms
+64 bytes from 190.0.8.2: icmp_seq=24 ttl=62 time=0.145 ms
+64 bytes from 190.0.8.2: icmp_seq=25 ttl=62 time=0.125 ms
+64 bytes from 190.0.8.2: icmp_seq=26 ttl=62 time=0.131 ms
+From 190.0.14.1 icmp_seq=27 Destination Net Unreachable
+64 bytes from 190.0.8.2: icmp_seq=52 ttl=60 time=0.438 ms
+64 bytes from 190.0.8.2: icmp_seq=53 ttl=60 time=0.180 ms
+64 bytes from 190.0.8.2: icmp_seq=54 ttl=60 time=0.154 ms
+64 bytes from 190.0.8.2: icmp_seq=55 ttl=60 time=0.170 ms
+64 bytes from 190.0.8.2: icmp_seq=56 ttl=60 time=0.155 ms
+64 bytes from 190.0.8.2: icmp_seq=57 ttl=60 time=0.150 ms
+64 bytes from 190.0.8.2: icmp_seq=58 ttl=60 time=0.160 ms
+64 bytes from 190.0.8.2: icmp_seq=59 ttl=60 time=0.183 ms
+64 bytes from 190.0.8.2: icmp_seq=60 ttl=60 time=0.188 ms
+64 bytes from 190.0.8.2: icmp_seq=61 ttl=60 time=0.285 ms
+64 bytes from 190.0.8.2: icmp_seq=62 ttl=60 time=0.182 ms
+64 bytes from 190.0.8.2: icmp_seq=63 ttl=60 time=0.743 ms
+64 bytes from 190.0.8.2: icmp_seq=64 ttl=60 time=0.164 ms
+64 bytes from 190.0.8.2: icmp_seq=65 ttl=60 time=0.145 ms
+64 bytes from 190.0.8.2: icmp_seq=66 ttl=60 time=0.172 ms
+64 bytes from 190.0.8.2: icmp_seq=67 ttl=60 time=0.178 ms
+64 bytes from 190.0.8.2: icmp_seq=68 ttl=60 time=0.176 ms
+64 bytes from 190.0.8.2: icmp_seq=69 ttl=60 time=0.173 ms
+64 bytes from 190.0.8.2: icmp_seq=70 ttl=60 time=0.164 ms
+64 bytes from 190.0.8.2: icmp_seq=71 ttl=60 time=0.184 ms
+64 bytes from 190.0.8.2: icmp_seq=72 ttl=60 time=0.167 ms
+64 bytes from 190.0.8.2: icmp_seq=73 ttl=60 time=0.167 ms
+64 bytes from 190.0.8.2: icmp_seq=74 ttl=60 time=0.169 ms
+64 bytes from 190.0.8.2: icmp_seq=75 ttl=60 time=0.163 ms
+64 bytes from 190.0.8.2: icmp_seq=76 ttl=60 time=0.159 ms
+64 bytes from 190.0.8.2: icmp_seq=77 ttl=60 time=0.309 ms
+64 bytes from 190.0.8.2: icmp_seq=78 ttl=60 time=0.165 ms
+64 bytes from 190.0.8.2: icmp_seq=79 ttl=60 time=0.421 ms
+64 bytes from 190.0.8.2: icmp_seq=80 ttl=60 time=0.164 ms
+From 190.0.14.1 icmp_seq=89 Destination Net Unreachable
+From 190.0.5.2 icmp_seq=110 Destination Net Unreachable
+From 190.0.5.2 icmp_seq=111 Destination Net Unreachable
+From 190.0.5.2 icmp_seq=112 Destination Net Unreachable
+From 190.0.5.2 icmp_seq=113 Destination Net Unreachable
+From 190.0.2.4: icmp_seq=147 Redirect Host(New nexthop: 190.0.2.2)
+From 190.0.2.4: icmp_seq=148 Redirect Host(New nexthop: 190.0.2.2)
+From 190.0.2.4: icmp_seq=149 Redirect Host(New nexthop: 190.0.2.2)
+From 190.0.2.4: icmp_seq=150 Redirect Host(New nexthop: 190.0.2.2)
+From 190.0.2.4: icmp_seq=151 Redirect Host(New nexthop: 190.0.2.2)
+From 190.0.17.1 icmp_seq=169 Destination Net Unreachable
+64 bytes from 190.0.8.2: icmp_seq=197 ttl=60 time=0.383 ms
+64 bytes from 190.0.8.2: icmp_seq=198 ttl=60 time=0.163 ms
+64 bytes from 190.0.8.2: icmp_seq=199 ttl=60 time=0.157 ms
+64 bytes from 190.0.8.2: icmp_seq=200 ttl=60 time=0.159 ms
+64 bytes from 190.0.8.2: icmp_seq=201 ttl=60 time=0.172 ms
+64 bytes from 190.0.8.2: icmp_seq=202 ttl=60 time=0.165 ms
+64 bytes from 190.0.8.2: icmp_seq=203 ttl=60 time=0.160 ms
+64 bytes from 190.0.8.2: icmp_seq=204 ttl=60 time=0.305 ms
+64 bytes from 190.0.8.2: icmp_seq=205 ttl=60 time=0.166 ms
+64 bytes from 190.0.8.2: icmp_seq=206 ttl=60 time=0.359 ms
+64 bytes from 190.0.8.2: icmp_seq=207 ttl=60 time=0.168 ms
+64 bytes from 190.0.8.2: icmp_seq=208 ttl=60 time=0.151 ms
+64 bytes from 190.0.8.2: icmp_seq=209 ttl=60 time=0.194 ms
+64 bytes from 190.0.8.2: icmp_seq=210 ttl=60 time=0.395 ms
+64 bytes from 190.0.8.2: icmp_seq=211 ttl=60 time=0.148 ms
+64 bytes from 190.0.8.2: icmp_seq=212 ttl=60 time=0.180 ms
+64 bytes from 190.0.8.2: icmp_seq=213 ttl=60 time=0.172 ms
+64 bytes from 190.0.8.2: icmp_seq=214 ttl=60 time=0.220 ms
+64 bytes from 190.0.8.2: icmp_seq=215 ttl=60 time=0.149 ms
+64 bytes from 190.0.8.2: icmp_seq=216 ttl=60 time=0.162 ms
+64 bytes from 190.0.8.2: icmp_seq=217 ttl=60 time=0.149 ms
+From 190.0.5.2 icmp_seq=260 Destination Net Unreachable
+
+--- 190.0.8.2 ping statistics ---
+300 packets transmitted, 76 received, +8 errors, 74% packet loss, time 306125ms
+rtt min/avg/max/mdev = 0.117/0.218/1.618/0.196 ms

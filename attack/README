@@ -1,0 +1,5 @@
+注意：
+1.编译attackSocket.cpp文件命令：g++ -std=c++11 -o attackSocket  attackSocket.cpp -lpthread -lssl -lcrypto
+2.仿真攻击场景时需要先调用ovs_restart.sh文件启动OVS
+
+
